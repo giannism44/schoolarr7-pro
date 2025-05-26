@@ -16,7 +16,7 @@ import java.security.Principal;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-public class User implements Principal {
+public class User implements IdentifiableEntity,Principal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
