@@ -53,5 +53,5 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO{
             return false;
         }
     }
-    }
 }
+
