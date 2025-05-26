@@ -14,6 +14,6 @@ public record TeacherInsertDTO(
      String lastname,
 
     @NotNull(message = "το ΑΦΜ δεν μπορεί να μην υπάρχει.")
-    @Size(message = "Το ΑΦΜ πρέπει να περιέχει τουλάχιστον 9 ψηφία.")
+    @Size(min = 9, message = "Το ΑΦΜ πρέπει να περιέχει τουλάχιστον 9 ψηφία.")
     String vat
 ){}
