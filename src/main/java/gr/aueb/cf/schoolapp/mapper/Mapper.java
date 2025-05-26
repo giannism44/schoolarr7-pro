@@ -1,7 +1,10 @@
 package gr.aueb.cf.schoolapp.mapper;
 
+import gr.aueb.cf.schoolapp.core.enums.RoleType;
 import gr.aueb.cf.schoolapp.dto.*;
 import gr.aueb.cf.schoolapp.model.Teacher;
+import gr.aueb.cf.schoolapp.model.User;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +47,16 @@ public class Mapper {
             filters.put("vat", filtersDTO.vat());
         }
         return filters;
+    }
+
+    public static User mapToUser(UserInsertDTO dto) {
+        return new User(null, dto.getUsername(), dto.getPassword(),
+                RoleType.valueOf(dto.getRole()));
+    }
+
+    public static UserReadOnlyDTO mapToUserReadOnlyDTO(User user) {
+        return new UserReadOnlyDTO(user.getId(), user.getUsername(), user.getPassword(),
+                user.getRoleType().name());
     }
 
 }
